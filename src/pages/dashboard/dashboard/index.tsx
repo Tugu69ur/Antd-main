@@ -16,12 +16,14 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="w-full h-full bg-white rounded-2xl p-1">
+      <div style={{ color: '#344054' }}>
       <TableToolbar
       title="Нийт"
       totalUsers={totalUsers}
       onSearch={setSearchQuery}
       onRefresh={() => setSearchQuery("")}
       />
+      </div>
       <UserTable 
       searchQuery={searchQuery} 
       setTotalUsers={setTotalUsers} 

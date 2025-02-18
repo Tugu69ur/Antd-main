@@ -5,14 +5,12 @@ const menuData: MenuDataItem[] = [
   {
     path: "/dashboard/dashboard",
     name: "Хянах самбар",
-    icon: <User01 size="28" />,
     children: [],
     className: "custom-menu-item",
   },
   {
     path: "/dashboard/burtgel",
     name: "Талбайн бүртгэл",
-    icon: <User01 size="28" />,
     children: [],
     className: "custom-menu-item",
    
@@ -20,7 +18,6 @@ const menuData: MenuDataItem[] = [
   {
     path: "/dashboard/lavlah",
     name: "Лавлах мэдээлэл",
-    icon: <User01 size="28" />,
     children: [],
     className: "custom-menu-item",
 
@@ -28,7 +25,6 @@ const menuData: MenuDataItem[] = [
   {
     path: "/dashboard/tailan",
     name: "Тайлан",
-    icon: <User01 size="28" />,
     children: [],
     className: "custom-menu-item",
    

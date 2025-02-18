@@ -2,8 +2,8 @@ import React from "react";
 import { Button } from "antd";
 
 interface TableToolbarProps {
-    onButtonClick: (buttonName: string) => void;
-    selectedTable: string | null;
+  onButtonClick: (buttonName: string) => void;
+  selectedTable: string | null;
   }
   
   const TableToolbar: React.FC<TableToolbarProps> = ({ onButtonClick, selectedTable }) => {

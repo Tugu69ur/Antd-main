@@ -1,12 +1,21 @@
-import UserTable from 'components/Table'
+import UserTable from "components/Table";
 import TableToolbar from "../../../components/tableHeaderTool";
-import React, { useState } from 'react'
-import Header from 'components/headerTool'
+import React, { useState, useEffect } from "react";
+import Header from "components/headerTool";
 
 function index() {
   const [selectedTable, setSelectedTable] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [totalUsers, setTotalUsers] = useState(0);
+
+  useEffect(() => {
+    // Set default table based on the current path
+    if (window.location.pathname.includes("burtgel")) {
+      setSelectedTable("Ачаа дөхөлт");
+    }else if (window.location.pathname.includes("lavlah")) {
+      setSelectedTable("Харилцагч компани");
+    }
+  }, []);
 
   const handleButtonClick = (buttonName: string) => {
     setSelectedTable(buttonName);
@@ -17,31 +26,32 @@ function index() {
   };
 
   return (
-    <div className='mt-[-30px]'>
-      <div className='mb-4'>
-        <Header 
-          onButtonClick={handleButtonClick} 
+    <div className="mt-[-30px]">
+      <div className="mb-4">
+        <Header
+          onButtonClick={handleButtonClick}
           selectedTable={selectedTable}
         />
       </div>
       <div className="w-full h-full bg-white rounded-2xl p-1">
+        <div style={{ color: '#344054' }}>
         <TableToolbar
           title="Нийт"
           totalUsers={totalUsers}
           onSearch={handleSearch}
-          onDateChange={(dates, dateStrings) => {
-            // Handle date change
-          }}
+          onDateChange={(dates, dateStrings) => {}}
           selectedTable={selectedTable}
         />
-        <UserTable 
+        </div>
+
+        <UserTable
           selectedTable={selectedTable}
-          searchQuery={searchQuery} 
-          setTotalUsers={setTotalUsers} 
+          searchQuery={searchQuery}
+          setTotalUsers={setTotalUsers}
         />
       </div>
     </div>
-  )
+  );
 }
 
-export default index
+export default index;

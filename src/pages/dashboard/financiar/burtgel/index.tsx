@@ -1,5 +1,5 @@
 import UserTable from "components/Table";
-import TableToolbar from "../../../components/tableHeaderTool";
+import TableToolbar from "../../../../components/tableHeaderTool";
 import React, { useState, useEffect } from "react";
 import Header from "components/headerTool";
 
@@ -9,10 +9,9 @@ function index() {
   const [totalUsers, setTotalUsers] = useState(0);
 
   useEffect(() => {
-    // Set default table based on the current path
     if (window.location.pathname.includes("burtgel")) {
       setSelectedTable("Ачаа дөхөлт");
-    }else if (window.location.pathname.includes("lavlah")) {
+    } else if (window.location.pathname.includes("lavlah")) {
       setSelectedTable("Харилцагч компани");
     }
   }, []);
@@ -34,14 +33,14 @@ function index() {
         />
       </div>
       <div className="w-full h-full bg-white rounded-2xl p-1">
-        <div style={{ color: '#344054' }}>
-        <TableToolbar
-          title="Нийт"
-          totalUsers={totalUsers}
-          onSearch={handleSearch}
-          onDateChange={(dates, dateStrings) => {}}
-          selectedTable={selectedTable}
-        />
+        <div style={{ color: "#344054" }}>
+          <TableToolbar
+            title="Нийт"
+            totalUsers={totalUsers}
+            onSearch={handleSearch}
+            onDateChange={(dates, dateStrings) => {}}
+            selectedTable={selectedTable}
+          />
         </div>
 
         <UserTable

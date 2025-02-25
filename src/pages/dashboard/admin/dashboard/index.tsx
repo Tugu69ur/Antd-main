@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import TableToolbar from "../../../components/tableHeaderTool";
-import UserTable from "../../../components/Table";
-import UserForm from "../../../components/userForm";
+import TableToolbar from "../../../../components/tableHeaderTool";
+import UserTable from "../../../../components/Table";
+import UserForm from "../../../../components/userForm";
 
 interface User {
   id: number;

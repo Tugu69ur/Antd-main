@@ -1,10 +1,9 @@
 import { lazy } from "react";
 
-const DashboardPage = lazy(() => import("pages/dashboard/dashboard"));
-const BurtgelPage = lazy(() => import("pages/dashboard/burtgel"));
-const MedeelelPage = lazy(() => import("pages/dashboard/lavlah"));
-const TailanPage = lazy(() => import("pages/dashboard/tailan"));
-
+const DashboardPage = lazy(() => import("pages/dashboard/admin/dashboard"));
+const BurtgelPage = lazy(() => import("pages/dashboard/financiar/burtgel"));
+const MedeelelPage = lazy(() => import("pages/dashboard/financiar/lavlah"));
+const TailanPage = lazy(() => import("pages/dashboard/financiar/tailan"));
 
 export const dashboardRoutes = [
   {
@@ -27,5 +26,4 @@ export const dashboardRoutes = [
     path: "tailan",
     element: <TailanPage />,
   },
-
 ];

@@ -1,7 +1,7 @@
 import UserTable from "components/Table";
 import React, { useState, useEffect } from "react";
 import Header from "components/headerTool";
-import TableToolbar from "../../../components/tableHeaderTool";
+import TableToolbar from "../../../../components/tableHeaderTool";
 
 function index() {
   const [selectedTable, setSelectedTable] = useState<string | null>(null);
@@ -32,15 +32,15 @@ function index() {
         />
       </div>
       <div className="w-full h-full bg-white rounded-2xl p-1">
-      <div style={{ color: '#344054' }}>
-      <TableToolbar
-          title="Нийт"
-          totalUsers={totalUsers}
-          onSearch={handleSearch}
-          onDateChange={(dates, dateStrings) => {}}
-          selectedTable={selectedTable}
-        />
-      </div>
+        <div style={{ color: "#344054" }}>
+          <TableToolbar
+            title="Нийт"
+            totalUsers={totalUsers}
+            onSearch={handleSearch}
+            onDateChange={(dates, dateStrings) => {}}
+            selectedTable={selectedTable}
+          />
+        </div>
 
         <UserTable
           selectedTable={selectedTable}

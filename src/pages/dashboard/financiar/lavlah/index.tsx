@@ -2,7 +2,7 @@ import UserTable from "components/Table";
 import { useState, useEffect } from "react";
 import { Button } from "antd";
 import Header from "components/headerTool";
-import TableToolbar from "../../../components/tableHeaderTool";
+import TableToolbar from "../../../../components/tableHeaderTool";
 
 function Index() {
   const [selectedTable, setSelectedTable] = useState<string | null>(null);
@@ -35,28 +35,31 @@ function Index() {
   return (
     <div className="mt-[-30px]">
       <div className="mb-4">
-        <Header onButtonClick={handleButtonClick} selectedTable={selectedTable} />
+        <Header
+          onButtonClick={handleButtonClick}
+          selectedTable={selectedTable}
+        />
       </div>
       <div className="w-full h-full bg-white rounded-2xl p-1">
-        {selectedTable === "Харилцагчдын дансны тооцоо"&& (
+        {selectedTable === "Харилцагчдын дансны тооцоо" && (
           <div className="flex items-center mt-2 ml-4">
-            <Button 
-              type="default" 
-              onClick={() => handleButtonClick("Данс")} 
+            <Button
+              type="default"
+              onClick={() => handleButtonClick("Данс")}
               style={getButtonStyle("Данс")}
             >
               Данс
             </Button>
-            <Button 
-              type="default" 
-              onClick={() => handleButtonClick("Гүйлгээ")} 
+            <Button
+              type="default"
+              onClick={() => handleButtonClick("Гүйлгээ")}
               style={getButtonStyle("Гүйлгээ")}
             >
               Гүйлгээ
             </Button>
           </div>
         )}
-        
+
         <TableToolbar
           title="Нийт"
           totalUsers={totalUsers}

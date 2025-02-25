@@ -8,6 +8,7 @@ import { AuthContext } from "context/AuthContext";
 import { AuthActionTypes } from "context/AuthContext/type";
 import { BookOpen01, Logout01 } from "untitledui-js-base";
 import menuData from "./menu";
+import {IClock} from "components/clock";
 
 const Logo = () => {
   return (
@@ -20,27 +21,6 @@ const Logo = () => {
 const DashboardLayout: React.FC = () => {
   const [user, dispatch] = useContext(AuthContext);
   const location = useLocation();
-  const [currentTime, setCurrentTime] = useState(
-    new Date().toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    })
-  );
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(
-        new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        })
-      );
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <ProLayout
@@ -84,10 +64,7 @@ const DashboardLayout: React.FC = () => {
 
         return (
           <div className="m-4 flex flex-col gap-4 text-white font-semibold">
-            {/* Time Display */}
-            <div className="text-center text-sm mb-6">{currentTime}</div>
-
-            {/* User Info */}
+            <IClock/>
             {user?.user ? (
               <div className="flex items-center gap-3">
                 <Avatar
@@ -105,8 +82,6 @@ const DashboardLayout: React.FC = () => {
             ) : (
               <div>Loading...</div>
             )}
-
-            {/* Logout Button */}
             <Logout01
               color="#fff"
               className="cursor-pointer mt-4"
@@ -120,7 +95,7 @@ const DashboardLayout: React.FC = () => {
       }}
       token={{
         header: {
-          colorMenuBackground: "#0000FF",
+          colorBgHeader: "#0000FF",
           colorTextMenu: "#B3B3B3",
           colorTextMenuSelected: "#fff",
           heightLayoutHeader: 80,
